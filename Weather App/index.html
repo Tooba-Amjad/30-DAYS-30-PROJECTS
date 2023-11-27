@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
     <div class="card">
         <div class="search">
             <input type="text" name="" id="" placeholder="Enter City Name" spellcheck="false">
@@ -41,14 +42,15 @@
         </div>
     </div>
     <script>
-       const apiKey = "65e334b802f1d54c459a40ccc8f87500";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+      //add your api key
+       const apiKey = "";
+const apiUrl = "http://api.weatherapi.com/v1/forecast.json?";
 
 const searchbox = document.querySelector(".search input");
 const searchbtn = document.querySelector(".search button");
 const weather_icon=document.querySelector(".weather-icon");
 async function checkWeather(city) {
-  const response = await fetch(`${apiUrl}&q=${city}&appid=${apiKey}`);
+  const response = await fetch(`${apiUrl}&q=${city}&key=${apiKey}`);
   if(response.status==404){
     document.querySelector(".error").style.display="block";
     document.querySelector(".weather").style.display="none";
@@ -58,9 +60,9 @@ async function checkWeather(city) {
   console.log(data);
 
   document.querySelector(".city").innerHTML = data.name;
-  document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-  document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-  document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+  document.querySelector(".temp").innerHTML = data.current.temp_c + "°C";
+  document.querySelector(".humidity").innerHTML =  data.current.humidity + "%";
+  document.querySelector(".wind").innerHTML = wind.speed + "km/h";
   if (data.weather[0].main=="Clouds"){
     weather_icon.src ="images/clouds.png";
   }
