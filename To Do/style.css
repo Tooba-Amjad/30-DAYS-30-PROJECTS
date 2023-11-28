@@ -1,14 +1,19 @@
 * {
     margin: 0;
     padding: 0;
-
+ 
 }
-
+.container{
+    width: 100%;
+    min-height:100vh;
+    background: linear-gradient(90deg ,rgb(196, 192, 255), pink);
+    padding:10px ;
+}
 .card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
-    color: #fff;
+    background: #fff;
+   
     margin: 100px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
@@ -22,37 +27,33 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    background:#edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom:25px ;
 }
 
 .taskbox input {
     border: 0;
     outline: 0;
-    background: #ebfffc;
     color: #555;
-    padding: 10px 25px;
-    border-radius: 30px;
-    margin-right: 16px;
+    padding: 10px ;
     font-size: 18px;
-    height: 60px;
-    flex: 1;
+    flex: 1; 
+    background:transparent ;
 }
 
 .taskbox button {
     border: 0;
     outline: 0;
-    background: #ebfffc;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    padding: 16px 50px;
+    background: #ff5945;
+    color:#fff;
+    border-radius: 40px;
     cursor: pointer;
-}
-
-.taskbox button img {
-    width: 16px;
+} 
 
 
-}
 
 #tasklist {
     display: flex;
